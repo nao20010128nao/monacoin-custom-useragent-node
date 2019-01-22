@@ -1,0 +1,57 @@
+version: "3.3"
+
+services:
+  wakitama:
+    image: nao20010128nao/homebrew-bitzeny-hacked:monacoin
+    volumes:
+      - ./temp/wakitama:/root/.monacoin
+    ports:
+      - 9401
+    entrypoint:
+      - monacoind
+      - -server=1
+      - -printtoconsole=1
+      - -port=9401
+      - -rpcport=9402
+      - -disablewallet=1
+      - -prune=550
+      - -uaclient=WakiyamaTamamiChanKawaii
+    network_mode: "host"
+    dns: 1.1.1.1
+
+  monacoinchan:
+    image: nao20010128nao/homebrew-bitzeny-hacked:monacoin
+    volumes:
+      - ./temp/monacoinchan:/root/.monacoin
+    ports:
+      - 9403
+    entrypoint:
+      - monacoind
+      - -server=1
+      - -printtoconsole=1
+      - -port=9403
+      - -rpcport=9404
+      - -disablewallet=1
+      - -prune=550
+      - -uaclient=MonacoinChanKawaii
+    network_mode: "host"
+    dns: 1.1.1.1
+
+  kusodokata:
+    image: nao20010128nao/homebrew-bitzeny-hacked:monacoin
+    volumes:
+      - ./temp/kusodokata:/root/.monacoin
+    ports:
+      - 9405
+    entrypoint:
+      - monacoind
+      - -server=1
+      - -printtoconsole=1
+      - -port=9405
+      - -rpcport=9406
+      - -disablewallet=1
+      - -prune=550
+      - -uaclient=Kusodokata
+    network_mode: "host"
+    dns: 1.1.1.1
+
