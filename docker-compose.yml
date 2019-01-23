@@ -16,7 +16,6 @@ services:
       - -disablewallet=1
       - -prune=550
       - -uaclient=WakiyamaTamamiChanKawaii
-    network_mode: "host"
     dns: 1.1.1.1
 
   monacoinchan:
@@ -34,7 +33,6 @@ services:
       - -disablewallet=1
       - -prune=550
       - -uaclient=MonacoinChanKawaii
-    network_mode: "host"
     dns: 1.1.1.1
 
   kusodokata:
@@ -52,6 +50,5 @@ services:
       - -disablewallet=1
       - -prune=550
       - -uaclient=Kusodokata
-    network_mode: "host"
     dns: 1.1.1.1
 
