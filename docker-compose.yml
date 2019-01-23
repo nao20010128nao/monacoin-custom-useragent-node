@@ -6,7 +6,7 @@ services:
     volumes:
       - ./temp/wakitama:/root/.monacoin
     ports:
-      - 9401
+      - 9401:9401
     entrypoint:
       - monacoind
       - -server=1
@@ -23,7 +23,7 @@ services:
     volumes:
       - ./temp/monacoinchan:/root/.monacoin
     ports:
-      - 9403
+      - 9403:9403
     entrypoint:
       - monacoind
       - -server=1
@@ -40,7 +40,7 @@ services:
     volumes:
       - ./temp/kusodokata:/root/.monacoin
     ports:
-      - 9405
+      - 9405:9405
     entrypoint:
       - monacoind
       - -server=1
