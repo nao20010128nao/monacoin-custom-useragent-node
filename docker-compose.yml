@@ -52,3 +52,20 @@ services:
       - -uaclient=Kusodokata
     dns: 1.1.1.1
 
+  nao20010128nao:
+    image: nao20010128nao/homebrew-bitzeny-hacked:monacoin
+    volumes:
+      - ./temp/nao20010128nao:/root/.monacoin
+    ports:
+      - 9407:9407
+    entrypoint:
+      - monacoind
+      - -server=1
+      - -printtoconsole=1
+      - -port=9407
+      - -rpcport=9408
+      - -disablewallet=1
+      - -prune=550
+      - -uaclient=nao20010128nao
+    dns: 1.1.1.1
+
