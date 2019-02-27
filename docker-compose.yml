@@ -1,5 +1,4 @@
 version: "3.3"
-
 services:
   wakitama:
     image: nao20010128nao/homebrew-bitzeny-hacked:monacoin
@@ -17,7 +16,6 @@ services:
       - -prune=550
       - -uaclient=WakiyamaTamamiChanKawaii
     dns: 1.1.1.1
-
   monacoinchan:
     image: nao20010128nao/homebrew-bitzeny-hacked:monacoin
     volumes:
@@ -34,7 +32,6 @@ services:
       - -prune=550
       - -uaclient=MonacoinChanKawaii
     dns: 1.1.1.1
-
   kusodokata:
     image: nao20010128nao/homebrew-bitzeny-hacked:monacoin
     volumes:
@@ -51,21 +48,15 @@ services:
       - -prune=550
       - -uaclient=Kusodokata
     dns: 1.1.1.1
-
-  nao20010128nao:
-    image: nao20010128nao/homebrew-bitzeny-hacked:monacoin
+  lesmi:
     volumes:
-      - ./temp/nao20010128nao:/root/.monacoin
-    ports:
-      - 9407:9407
+      - ./temp/lesmi:/root/.monacoin
+    image: nao20010128nao/homebrew-bitzeny-hacked:monacoin
     entrypoint:
       - monacoind
       - -server=1
       - -printtoconsole=1
-      - -port=9407
-      - -rpcport=9408
       - -disablewallet=1
       - -prune=550
-      - -uaclient=nao20010128nao
+      - -uaclient=Lesmi
     dns: 1.1.1.1
-
